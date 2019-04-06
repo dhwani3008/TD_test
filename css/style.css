@@ -332,17 +332,18 @@ button {
 	border-radius: 5px;
 }
 .red {
-	background-color: #c65415;
+	background-color:#981F1B !important;
+	border-color: #981F1B !important;
 }
 .red:hover {
-	background-color: #9f201c;
+	background-color: #82360D !important;
 }
 .green:hover {
-	background-color: #216c21;
+	background-color: #216c21 !important;
 }
 .green {
-	background-color: #008a00;
-	border-color: #008a00;
+	background-color: #008a00!important;
+	border-color: #008a00!important;
 }
 input:focus, input:hover {
 	border-bottom-color: #00a221;
