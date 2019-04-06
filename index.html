@@ -28,12 +28,12 @@
         <div class="mobileNavIcon">
           <div class="visible-xs visible-sm"><a href="#mobmenu"><i class="fas fa-bars"></i></a></div>
         </div>
-        <div class="mobileNav" id="mobmenu">
+        <div class="mobileNav" id="mobmenu" tabIndex="-1">
           <ul>
             <li> <a href="/my-policies">Products</a></li>
             <li> <a href="/claims"> Claims</a></li>
             <li> <a href="/customer-service"> Contact Us</a></li>
-            <li aria-haspopup="true" class="province drpBtn"> <a href="" aria-haspopup="true" aria-expanded="false" aria-controls="language_option"> <span class="visibilityhidden">Select province</span>Ontario </a>
+            <li aria-haspopup="true" class="province drpBtn"> <a href="javascript:;" aria-haspopup="true" aria-expanded="false"> <span class="visibilityhidden">Select province</span>Ontario </a>
               <div class="provinceList drp_list" aria-hidden="true">
                 <ul id="provinceList">
                   <li>Quebec</li>
@@ -41,7 +41,7 @@
                 </ul>
               </div>
             </li>
-            <li aria-haspopup="true" class="drpBtn"> <a href="" aria-haspopup="true" aria-expanded="false" aria-controls="language_option"> <span class="visibilityhidden">Select language</span> EN </a>
+            <li aria-haspopup="true" class="drpBtn"> <a href="javascript:;" aria-haspopup="true" aria-expanded="false"> <span class="visibilityhidden">Select language</span> EN </a>
               <div class="drp_list" aria-hidden="true">
                 <ul id="lang">
                   <li>FR</li>
@@ -49,12 +49,12 @@
                 </ul>
               </div>
             </li>
-            <li class="search"> <a href="https://myinsurance.td.com" target=""> Search </a> </li>
+            <li class="search"> <a href="https://myinsurance.td.com" > Search </a> </li>
           </ul>
         </div>
         <div class="logo"><img src="images/td-other-logo.png" alt="TD Insurance"></div>
         <div class="main-menu menu pull-left hidden-xs hidden-sm">
-          <nav>
+          <nav aria-label="Main menu">
             <div class="navLinks">
               <ul>
                 <li> <a href="/my-policies">Products</a></li>
@@ -65,18 +65,20 @@
           </nav>
         </div>
         <div class="side-menu menu pull-right">
-          <ul>
-            <li aria-haspopup="true" class="hidden-xs hidden-sm province drpBtn"> <a href="" aria-haspopup="true" aria-expanded="false" aria-controls="language_option"> <span class="visibilityhidden">Select province</span>Ontario <i class="fas fa-chevron-down"></i> </a>
+          <ul role="navigation" aria-label="Side menu">
+            <li aria-haspopup="true" class="hidden-xs hidden-sm province drpBtn"> 
+				<a href="javascript:;" aria-haspopup="true" aria-expanded="false"> 
+					<span class="visibilityhidden">Select province</span>Ontario <i class="fas fa-chevron-down"></i> </a>
               <div class="provinceList drp_list" aria-hidden="true">
-                <ul id="provinceList">
+                <ul id="provinceListSide">
                   <li class="notMain"><a>Quebec</a></li>
                   <li class="notMain"><a>Ontario</a></li>
                 </ul>
               </div>
             </li>
-            <li aria-haspopup="true" class="drpBtn hidden-xs hidden-sm"> <a href="" aria-haspopup="true" aria-expanded="false" aria-controls="language_option"> <span class="visibilityhidden">Select language</span>EN <i class="fas fa-chevron-down"></i> </a>
+            <li aria-haspopup="true" class="drpBtn hidden-xs hidden-sm"> <a href="javascript:;" aria-haspopup="true" aria-expanded="false"> <span class="visibilityhidden">Select language</span>EN <i class="fas fa-chevron-down"></i> </a>
               <div class="drp_list" aria-hidden="true">
-                <ul id="lang">
+                <ul id="langSide">
                   <li class="notMain"><a href="#">FR</a></li>
                   <li class="notMain"><a href="#">EN</a></li>
                 </ul>
@@ -89,11 +91,11 @@
       </div>
     </div>
   </header>
-  <section>
+  <section id="main">
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-9">
-          <div class="leftContent">
+          <div class="leftContent"  role="main">
             <h1 class="hidden">TD Insurance</h1>
             <h2>Tell Us About Yourself</h2>
             <p>Thanks for choosing TD Insurance! In order to safely set up your new accounts and services, please tell us about yourself.</p>
@@ -101,7 +103,8 @@
             <form action="" id="mainForm" method="post"  onsubmit="return validateForm();">
               <div class="fieldWrapper">
                 <div class="title-select">
-                  <select aria-invalid="false" aria-required="true" class="form-control" data-val="true" data-val-required="Please select your title." id="title" name="Title" tabindex="0">
+				   <label class="visibilityhidden" for="title">Title*</label>
+               <select aria-invalid="false" aria-required="true" class="form-control" data-val="true" data-val-required="Please select your title." id="title" name="title" tabindex="0">
                     <option value="">Title*</option>
                     <option value="mr">Mr.</option>
                     <option value="mrs">Mrs.</option>
@@ -110,41 +113,41 @@
                   <span class="requiredMsg" style="color:Red;visibility:hidden;">* Please select your title</span> </div>
               </div>
               <div class="fieldWrapper">
-                <label class="visibilityhidden">First name*</label>
+                <label class="visibilityhidden" for="firstname">First name*</label>
                 <input type="text" name="firstname"  id="firstname" value="" placeholder="First name*">
                 <span class="requiredMsg" style="color:Red;visibility:hidden;">* Please enter your first name</span> </div>
               <div class="fieldWrapper">
-                <label class="visibilityhidden">Middle Initial</label>
+                <label class="visibilityhidden" for="middleinitial">Middle Initial</label>
                 <input type="text" name="middleinitial" id="middleinitial" value="" placeholder="Middle Initial">
                 <span class="requiredMsg" style="color:Red;visibility:hidden;">* Please enter middle name</span> </div>
               <div class="fieldWrapper marginRightNone">
-                <label class="visibilityhidden">Last Name</label>
+                <label class="visibilityhidden" for="lastname">Last Name</label>
                 <input type="text" name="lastname"  id="lastname" value="" placeholder="Last Name*">
                 <span class="requiredMsg" style="color:Red;visibility:hidden;">* Please enter your last name</span> </div>
               <div class="fieldWrapper">
-                <label class="visibilityhidden">Email Address</label>
+                <label class="visibilityhidden" for="email-address">Email Address</label>
                 <input type="text" name="email-address"  value="" id="email-address" placeholder="Email Address*" >
-                <i class="far fa-question-circle emailPop"></i> <span class="emailDescription popup">Please enter your email address</span> <span class="requiredMsg" style="color:Red;visibility:hidden;">* Please enter your email address</span> </div>
+                <i class="far fa-question-circle emailPop" role="button" aria-label="Email Address Description"></i> <span class="emailDescription popup" role="alert">Please enter your email address</span> <span class="requiredMsg" style="color:Red;visibility:hidden;">* Please enter your email address</span> </div>
               <div class="fieldWrapper">
-                <label class="visibilityhidden">Date of Birth</label>
+                <label class="visibilityhidden" for="dob">Date of Birth</label>
                 <input type="text" name="dob"  value="" id="dob" placeholder="Date of Birth*">
                 <span class="requiredMsg" style="color:Red;visibility:hidden;">* Please enter your date of birth</span> </div>
               <div class="fieldWrapper marginRightNone">
-                <label class="visibilityhidden">Social Insurance Number</label>
+                <label class="visibilityhidden" for="sin">Social Insurance Number</label>
                 <input type="text" name="SIN" value=""  id="sin" placeholder="Social Insurance Number*" >
-                <i class="far fa-question-circle sinPop"></i><span class="sinDescription popup">Please enter your Social Insurance Number</span> <span class="requiredMsg" style="color:Red;visibility:hidden;">* Please enter your social insurance number</span> </div>
+                <i class="far fa-question-circle sinPop" role="button" aria-label="Social Insurance Number Description"></i><span class="sinDescription popup" role="alert">Please enter your Social Insurance Number</span> <span class="requiredMsg" style="color:Red;visibility:hidden;">* Please enter your social insurance number</span> </div>
               <div class="btns">
-                <input type="reset" value="Cancel" class="btn-danger red">
-                <input type="submit" value="Submit" class="btn-success green">
+                <input type="reset" value="Cancel" class="btn-danger red" role="button" aria-label="Reset">
+                <input type="submit" value="Submit" class="btn-success green" role="button" aria-label="Submit">
               </div>
             </form>
           </div>
         </div>
         <div class="col-xs-12 col-md-3 col-sm-4">
-          <div class="rightContent">
+          <div class="rightContent"  role="complementary">
             <p class="righttitle">You are applying for:</p>
             <p>TD&reg; Travel Medical Insurance</p>
-            <button type="submit" value="more-coverage" class="btn-success green wideBtn col-xs-12">See More Coverage Options</button>
+            <button type="submit" value="more-coverage" class="btn-success green wideBtn col-xs-12" role="button" aria-label="More Coveration Options">See More Coverage Options</button>
           </div>
         </div>
       </div>
@@ -155,8 +158,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 footerImage" style="background-image:url('images/footerIcon.png');">
-            <div class=""> <span style="background-image:url('images/footerIcon.png');"></span> </div>
-            <p class="footerContent subtitle">Need to talk to us directly?<a href="#" target="">Contact us <i class="rightChevron fas fa-chevron-right"></i></a></p>
+            <p class="footerContent subtitle">Need to talk to us directly?<a href="#">Contact us <i class="rightChevron fas fa-chevron-right"></i></a></p>
             <div class="footerLinks"> <a href="https://www.td.com/privacy-and-security/privacy-and-security/index.jsp">Privacy &amp; Security</a> <a href="https://www.td.com/to-our-customers/">Legal</a> <a href="http://www.tdcanadatrust.com/customer-service/accessibility/accessibility-at-td/index.jsp">Accessibility</a> <a href="https://www.td.com/about-tdbfg/our-business/index.jsp">About Us</a> <a href="https://jobs.td.com/en-CA/">Careers</a> </div>
             <div>
               <ul class="social-media">
