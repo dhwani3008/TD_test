@@ -8,10 +8,10 @@
 	font-style: normal;
 }
 body {
-	font-family: "WeblySleek UI Semilight", sans, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: inherit;
 	line-height: 1.5;
-	color: #454545;
+	color: #656565;
 	background-color: #efeff4;
 }
 .container-fluid {
@@ -236,7 +236,7 @@ footer .footerContent a {
 }
 h2 {
 	font-size: 23px;
-	margin-bottm: 19px;
+	margin-bottom: 19px;
 }
 .rightContent {
 	margin-top: 35px;
