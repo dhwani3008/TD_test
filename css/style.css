@@ -1,12 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-@font-face {
-	font-family: "WeblySleek UI Semilight";
-	src: url("../fonts/weblysleekuisl.eot?") format("eot"), url("../fonts/weblysleekuisl.woff") format("woff"), url("../fonts/weblysleekuisl.ttf") format("truetype"), url("../fonts/weblysleekuisl.svg#WeblySleekUISemilight") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
+
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: inherit;
